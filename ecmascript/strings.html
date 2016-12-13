@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">TECNOLOGIAS WEB CON JAVASCRIPT</a>
+       <img src="https://github.com/faxa94/Proyecto_ECMASCRIPT/blob/master/logo.png?raw=" width="75" height="100%" align="right">
+    </div>
+  </nav>
+  <div class="row" id="presentacion">
+
+    <div class="col s12 m4 l3" style="background-color:#E6E3E2;  border: 1px solid #ACA9A7; padding: 0px 0px 0px 0px;">
+      <br>
+      <img class="center-block" src="https://github.com/faxa94/Proyecto_ECMASCRIPT/blob/master/ES6.png?raw=true" width="180" height="130" align="middle">
+      <br>
+      <h3>Contenido</h3>
+   <div class="collection">
+        <a href="variables.html" class="collection-item" style="color:#4e342e;">Variables and Constants</a>
+        <a href="iifes.html" class="collection-item" style="color:#4e342e;">IIFEs</a>
+        <a href="Arrow.html" class="collection-item" style="color:#4e342e;">Arrow Functions</a>
+        <a href="strings.html" class="collection-item" style="color:#4e342e;">Strings</a>
+        <a href="templateLiteral.html" class="collection-item" style="color:#4e342e;">Template literals</a>
+        <a href="Arrays.html" class="collection-item" style="color:#4e342e;">Destructuring arrays</a>
+        <a href="Object.html" class="collection-item" style="color:#4e342e;">Destructuring objects</a>
+        <a href="Modules.html" class="collection-item" style="color:#4e342e;">Modules</a>
+        <a href="Parametres.html" class="collection-item" style="color:#4e342e;">Parameters</a>
+        <a href="spreadOperator.html" class="collection-item" style="color:#4e342e;">Spread Operator</a>
+        <a href="Classes.html" class="collection-item" style="color:#4e342e;">Classes</a>
+        <a href="promesas.html" class="collection-item" style="color:#4e342e;">Promises</a>
+        <a href="GetandSet.html" class="collection-item" style="color:#4e342e;">Getter and Setter</a>
+      </div>
+    </div>
+
+    <div class="col s12 m8 l9" style="background-color:#E6E3E2; border: 1px solid #ACA9A7;  ">
+      <div>
+        <br>
+
+        <h3>Strings</h3>
+
+      </div>
+    </div>
+
+    <div class="col s12 m8 l9" id="global">
+      <div>
+        <br>
+        <h5>Template String</h5>
+        <p>Las cadenas de caracteres se concatenaban en ES5 de la siguiente manera:</p>
+        <pre id="codigo">
+          <code>
+  function string(str1, str2, str3){
+  let oracion= str1+" "+str2+" "+str3;
+  return oracion;
+}
+console.log(string("rayos","y","lluvia"));
+          </code>
+        </pre>
+        <p>Se utilizaba el operador aritmentico (+) para unir variables, independientemente cual fuera su tipo</p>
+
+        <p>En ES6 se han agregado nuevo simbolos para la concatenacion de cadenas como son:
+        </p>
+
+        <pre id="codigo">
+  <code>
+    function string(str1, str2, str3){
+  let oracion=`${str1} ${str2} ${str3}`;
+  return oracion;
+}
+console.log(string("rayos","y","lluvia"));
+  </code>
+</pre>
+
+        <p>Tambien se pueda dar uso con este formato a strings multilinea</p>
+        <pre id="codigo">
+  <code>
+    function string(str1, str2, str3){
+  let oracion=`El ${str1} es una poderosa descarga natural de electricidad estática, 
+producida durante una tormenta eléctrica, 
+que genera un pulso electromagnético. 
+
+
+La descarga eléctrica precipitada de la ${str3} 
+es acompañada por la emisión de luz.`;
+  return oracion;
+}
+console.log(string("rayo","y","lluvia"));
+  </code>
+</pre>
+
+        <p>Incluye nuevas bibliotecas, como es include() y repeat()</p>
+        <h5>Include()</h5>
+        <pre id="codigo">
+  <code>
+    //Comparando con el valor -1
+    var string = 'food';
+    var substring = 'foo';
+    console.log(string.indexOf(substring) > -1);
+    // include()
+    const string = 'food';
+    const substring = 'foo';
+    console.log(string.includes(substring));
+  </code>
+</pre>
+        <h5>Repeat()</h5>
+        <pre id="codigo">
+  <code>
+    console.log('merizalde'.repeat(3)); // merizaldemerizaldemerizalde
+  </code>
+</pre>
+
+
+        <div class="fixed-action-btn horizontal click-to-toggle">
+          <a class="btn-floating btn-large #f57f17 yellow darken-4">
+            <i class="material-icons">add</i>
+          </a>
+          <ul>
+            <li>
+              <a class="btn-floating #607d8b blue-grey" onclick="cambiaColor1('#607d8b');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #fafafa grey lighten-5" onclick="cambiaColor1('#fafafa');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #4fc3f7 light-blue lighten-2" onclick="cambiaColor1('#4fc3f7');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #7986cb indigo lighten-2" onclick="cambiaColor1('#7986cb');"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+</html>

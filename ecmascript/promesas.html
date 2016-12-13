@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">TECNOLOGIAS WEB CON JAVASCRIPT</a>
+       <img src="https://github.com/faxa94/Proyecto_ECMASCRIPT/blob/master/logo.png?raw=" width="75" height="100%" align="right">
+    </div>
+  </nav>
+  <div class="row" id="presentacion">
+
+    <div class="col s12 m4 l3" style="background-color:#E6E3E2;  border: 1px solid #ACA9A7; padding: 0px 0px 0px 0px;">
+      <br>
+      <img class="center-block" src="https://github.com/faxa94/Proyecto_ECMASCRIPT/blob/master/ES6.png?raw=true" width="180" height="130" align="middle">
+      <br>
+      <h3>Contenido</h3>
+    <div class="collection">
+        <a href="variables.html" class="collection-item" style="color:#4e342e;">Variables and Constants</a>
+        <a href="iifes.html" class="collection-item" style="color:#4e342e;">IIFEs</a>
+        <a href="Arrow.html" class="collection-item" style="color:#4e342e;">Arrow Functions</a>
+        <a href="strings.html" class="collection-item" style="color:#4e342e;">Strings</a>
+        <a href="templateLiteral.html" class="collection-item" style="color:#4e342e;">Template literals</a>
+        <a href="Arrays.html" class="collection-item" style="color:#4e342e;">Destructuring arrays</a>
+        <a href="Object.html" class="collection-item" style="color:#4e342e;">Destructuring objects</a>
+        <a href="Modules.html" class="collection-item" style="color:#4e342e;">Modules</a>
+        <a href="Parametres.html" class="collection-item" style="color:#4e342e;">Parameters</a>
+        <a href="spreadOperator.html" class="collection-item" style="color:#4e342e;">Spread Operator</a>
+        <a href="Classes.html" class="collection-item" style="color:#4e342e;">Classes</a>
+        <a href="promesas.html" class="collection-item" style="color:#4e342e;">Promises</a>
+        <a href="GetandSet.html" class="collection-item" style="color:#4e342e;">Getter and Setter</a>
+      </div>
+    </div>
+
+    <div class="col s12 m8 l9" style="background-color:#E6E3E2; border: 1px solid #ACA9A7;  ">
+      <div>
+        <br>
+
+        <h3>Promises</h3>
+
+      </div>
+    </div>
+
+    <div class="col s12 m8 l9" id="global">
+      <div>
+        <br>
+        <h5>CallBack</h5>
+        <p> Los callback consisten en llamar a una funcion mandando como parametro una nueva función esperando que la función original ejecute esa función callback.</p>
+        <pre id="codigo">
+            <code class="JavaScript">
+function fn1(miCallback){
+miCallback();
+ }
+fn1(function(){
+   console.log('fin');
+});
+            </code>
+        </pre>
+        <h5>Callback Horizontales</h5>
+        <p>Dentro de cada funcion, de declara una funcion , de la siguiente forma</p>
+        <pre id="codigo">
+  <code>
+    app.get('/', function (req, res) {
+    console.log('1 antes de leer');
+    var todo = '';
+    fs.readFile('./paginas/pagina.html','utf8',function (error, archivoLeido1) {
+        todo+=archivoLeido1;
+            fs.readFile('./paginas/usuario.html','utf8',function (error, archivoLeido2) {
+                todo+=archivoLeido2;
+                    fs.readFile('./paginas/footer.html','utf8', function (error, archivoLeido3) {
+                            todo+=archivoLeido3;
+                            res.send(todo);
+                        });
+                });
+        });
+    console.log('2 parece que termino de leer');
+})
+  </code>
+</pre>
+
+        <h5>Callback Verticales</h5>
+        <p>Se utiliza la sentencia then para desglosar cada funcion.
+        </p>
+        <pre id="codigo">
+  <code>
+function (req, res)
+    .then(function (error, archivoLeido1))
+    .then(function (error, archivoLeido2))
+    .then(function (error, archivoLeido3))
+    .then(function (error, archivoLeido4), archivoLeido4 => {
+        res.send(todo);
+    });
+  </code>
+</pre>
+        <p>ES6 se tiene dos handler, resolv (función cuando la promesa se cumple ) y reject (función llamada cuando la promesa es rechazada ).</p>
+        <pre id="codigo">
+  <code>
+    var request = require('request');
+
+return new Promise((resolve, reject) => {
+  request.get(url, (error, response, body) => {
+    if (body) {
+        resolve(JSON.parse(body));
+      } else {
+        resolve({});
+      }
+  });
+});
+  </code>
+</pre>
+        <p>Se pude paralelizar promesas para manejar una gran variedad de operaciones asincrónicas mediante el uso de Promise.all():</p>
+        <pre id="codigo">
+  <code>
+    let urls = [
+  './paginas/usuario.html',
+  './paginas/templete.html',
+  './paginas/footer.html',
+];
+
+let promises = urls.map((url) => {
+  return new Promise((resolve, reject) => {
+    $.ajax({ url: url })
+      .done((archivoleido) => {
+        resolve(archivoleido);
+      });
+  });
+});
+
+Promise.all(promises)
+  .then((results) => {
+    let tod+= archivoleido;
+ });
+  </code>
+</pre>
+
+        <div class="fixed-action-btn horizontal click-to-toggle">
+          <a class="btn-floating btn-large #f57f17 yellow darken-4">
+            <i class="material-icons">add</i>
+          </a>
+          <ul>
+            <li>
+              <a class="btn-floating #607d8b blue-grey" onclick="cambiaColor1('#607d8b');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #fafafa grey lighten-5" onclick="cambiaColor1('#fafafa');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #4fc3f7 light-blue lighten-2" onclick="cambiaColor1('#4fc3f7');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #7986cb indigo lighten-2" onclick="cambiaColor1('#7986cb');"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+</html>

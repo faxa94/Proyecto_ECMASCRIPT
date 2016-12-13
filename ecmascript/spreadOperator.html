@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="script.js"></script>
+</head>
+
+<body>
+
+ <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center">TECNOLOGIAS WEB CON JAVASCRIPT</a>
+      <img src="https://github.com/faxa94/Proyecto_ECMASCRIPT/blob/master/logo.png?raw=" width="75" height="100%" align="right">
+    </div>
+  </nav>
+  <div class="row" id="presentacion">
+
+    <div class="col s12 m4 l3" style="background-color:#E6E3E2;  border: 1px solid #ACA9A7; padding: 0px 0px 0px 0px;">
+      <br>
+      <img class="center-block" src="https://github.com/faxa94/Proyecto_ECMASCRIPT/blob/master/ES6.png?raw=true" width="180" height="130" align="middle">
+      <br>
+      <h3>Contenido</h3>
+        <div class="collection">
+        <a href="variables.html" class="collection-item" style="color:#4e342e;">Variables and Constants</a>
+        <a href="iifes.html" class="collection-item" style="color:#4e342e;">IIFEs</a>
+        <a href="Arrow.html" class="collection-item" style="color:#4e342e;">Arrow Functions</a>
+        <a href="strings.html" class="collection-item" style="color:#4e342e;">Strings</a>
+        <a href="templateLiteral.html" class="collection-item" style="color:#4e342e;">Template literals</a>
+        <a href="Arrays.html" class="collection-item" style="color:#4e342e;">Destructuring arrays</a>
+        <a href="Object.html" class="collection-item" style="color:#4e342e;">Destructuring objects</a>
+        <a href="Modules.html" class="collection-item" style="color:#4e342e;">Modules</a>
+        <a href="Parametres.html" class="collection-item" style="color:#4e342e;">Parameters</a>
+        <a href="spreadOperator.html" class="collection-item" style="color:#4e342e;">Spread Operator</a>
+        <a href="Classes.html" class="collection-item" style="color:#4e342e;">Classes</a>
+        <a href="promesas.html" class="collection-item" style="color:#4e342e;">Promises</a>
+        <a href="GetandSet.html" class="collection-item" style="color:#4e342e;">Getter and Setter</a>
+      </div>
+    </div>
+
+    <div class="col s12 m8 l9" style="background-color:#E6E3E2; border: 1px solid #ACA9A7;  ">
+      <div>
+        <br>
+
+        <h3>Spread Operator</h3>
+
+      </div>
+    </div>
+
+    <div class="col s12 m8 l9" id="global">
+      <div>
+        <br>
+        <h5>Arrays</h5>
+        <p>La utilizacion del operador de propagacion (spread operator) en arrays, permite 
+        añadir, invocar atributos de un arrays dentro de otro arrays mas facilmente, sin la utilizacion de
+        metodos como push, splice, concat.</p>
+        <p>La forma de declara un spread operator es con tres punto seguidos de un identificador.</p>
+        <pre id="codigo">
+            <code class="JavaScript">
+let numeros=[1,2,0,3];
+let vect=[...numeros, 4, 5, 6]; 
+console.log(vect); // 1,2,0,3,4,5,6
+            </code>
+        </pre>
+
+        <h5>Metodo Push</h5>
+        <p>La creacion de los operadores de propagacion permiten que algunos metodos se optimicen.
+        Un ejemplo es el metodo push, que reduce el numero de comandos para ejecutar la operacion push</p>
+        <pre id="codigo">
+            <code class="JavaScript">
+let arr1 = [0, 1, 2];
+let arr2 = [3, 4, 5];
+arr1.push(...arr2);
+console.log(arr1); // 0,1,2,3,4,5
+            </code>
+        </pre>
+        
+        <h5>Funciones</h5>
+        <p>Se pueden agregar los operadores de propagacion dentro de una funcion ya sea a su inicializacion o declaracion</p>
+<pre id="codigo">
+  <code>
+function suma(n1,n2,n3,n4){  
+  return n1+" "+n2+" "+n3+" "+n4;
+}
+
+let numbers = [12,5,8,10];
+console.log(suma(5,6,...numbers));// "5 6 12 5"
+console.log(suma(5,...numbers)); // "5 12 5 8"
+console.log(suma(...numbers)); //"12 5 8 10"
+
+function suma(n1,...numbers){ //declaracion
+  // code
+}
+  </code>
+</pre>
+<h5>Instancias a Clases</h5>
+        <p>Se escriben de igual forma como en una funcion.</p>
+<pre id="codigo">
+  <code>
+let dateFields = readDateFields(database);
+let d = new Date(...dateFields);
+  </code>
+</pre>
+
+        <div class="fixed-action-btn horizontal click-to-toggle">
+          <a class="btn-floating btn-large #f57f17 yellow darken-4">
+            <i class="material-icons">add</i>
+          </a>
+          <ul>
+            <li>
+              <a class="btn-floating #607d8b blue-grey" onclick="cambiaColor1('#607d8b');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #fafafa grey lighten-5" onclick="cambiaColor1('#fafafa');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #4fc3f7 light-blue lighten-2" onclick="cambiaColor1('#4fc3f7');"></a>
+            </li>
+            <li>
+              <a class="btn-floating #7986cb indigo lighten-2" onclick="cambiaColor1('#7986cb');"></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+</html>
