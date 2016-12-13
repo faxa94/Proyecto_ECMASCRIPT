@@ -1,6 +1,6 @@
 # Proyecto_ECMASCRIPT
 ## Integrantes
-## * Andres chasiliquin
+## * Andres Chasiliquin
 ## * Luis Reinoso
 Tutorial basico de EcmaScript 6, los contenidos son:
 * Variables: var,let y const
